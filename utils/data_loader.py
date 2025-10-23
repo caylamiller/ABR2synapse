@@ -4,7 +4,7 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 
-from utils import *
+from utils.utils import load_peak_finding_model, preprocess_waveform, peak_finding, extract_metadata, read_custom_tsv
 
 peak_finding_model = load_peak_finding_model()
 

@@ -7,7 +7,7 @@ import re
 from scipy.ndimage import gaussian_filter1d
 from scipy.signal import find_peaks
 from sklearn.preprocessing import StandardScaler, MinMaxScaler
-from ABRA_35.models import CNN, interpolate_and_smooth
+from utils.ABRA_35.models import CNN, interpolate_and_smooth
 
 
 def load_peak_finding_model():
@@ -19,7 +19,7 @@ def load_peak_finding_model():
 
     # Model initialization
     peak_finding_model = CNN(filter1, filter2, dropout1, dropout2, dropout_fc)
-    model_loader = torch.load('./ABRA_35/models/waveI_cnn.pth')
+    model_loader = torch.load('./utils/ABRA_35/models/waveI_cnn.pth')
     peak_finding_model.load_state_dict(model_loader)
     peak_finding_model.eval()
     return peak_finding_model

@@ -1,4 +1,4 @@
-from ABRA_35.models import CNN
+from utils.ABRA_35.models import CNN
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -271,7 +271,7 @@ def train_cnn_model(train_loader, val_loader, num_epochs=100,
 
     if model_type == 'default':
         model = CNN(128, 32, 0.5, 0.3, 0.1)
-        model.load_state_dict(torch.load('./ABRA_35/models/waveI_cnn.pth'))
+        model.load_state_dict(torch.load('./utils/ABRA_35/models/waveI_cnn.pth'))
     elif model_type == 'improved':
         model = SimplerImprovedCNN()
     elif model_type == 'wavei':
